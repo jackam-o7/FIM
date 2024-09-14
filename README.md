@@ -125,3 +125,18 @@ I ran the program and chose the monitoring option by selecting B. As soon as I a
 <br/> <br/><img src="https://i.imgur.com/hxTqzyv.png" height="60%" width="60%" alt="File added snippet working"/> </br>
 
 <b>File Altered</b> </br>
+Next, I expanded the monitoring loop to not only detect new files but also alert when an existing file has been changed. By comparing the current hash of each file with the one stored in the dictionary, I can determine if the file has been modified.
+The updated portion of the code can be seen below.
+<br/> <br/><img src="https://i.imgur.com/0MwAsfn.png" height="60%" width="60%" alt="File altered snippet"/> </br>
+After running the program and selecting B to start monitoring, I made some changes to d.txt. Right away, I was notified that the file had been altered, meaning the monitoring is functioning as expected. The script is now capable of detecting both new files and any modifications to existing ones.
+<br/> <br/><img src="https://i.imgur.com/igy2Kj7.png" height="60%" width="60%" alt="File altered snippet working"/> </br>
+With this set up, the file integrity monitor is now successfully tracking changes, which is a huge step forward in building out this tool in my lab environment.
+
+<b>File Removed</b>
+The final thing for me to implement is a way to detect if a file has been deleted or not. Using a loop that checks each file path stored in the dictionary, I used Test-Path to verify whether the file still exists. If it doesn’t, the script alerts me that the file has been removed.
+Here’s the code I used:
+<br/> <br/><img src="https://i.imgur.com/Pw6bt0f.png" height="60%" width="60%" alt="File removed snippet "/> </br>
+After implementing this, I tested it by removing a file from the monitored folder. Sure enough, the program notified me immediately that the file had been deleted. Now, the monitor can handle file creations, modifications, and deletions, completing the core functionality of my File Integrity Monitor.
+<br/> <br/><img src="https://i.imgur.com/Ro6yMiS.png" height="60%" width="60%" alt="File removed snippet working "/> </br>
+This final feature rounds out the project, giving me full coverage over file changes in the folder I’m monitoring. The process of building this from scratch has been a great learning experience, and I’m excited to apply similar concepts in more advanced scenarios!
+
